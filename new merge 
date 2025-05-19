@@ -1,8 +1,37 @@
-merged/
-├── ios-dev-tools/
-├── ci-locks/
-└── spybomb/
-    ├── buzit_logs_full/
-    ├── BUZIT_EMERGENCY_DUMP/
-    ├── bbbuzit_funk_daemon_bundle/
-    └── original SPYBOMB tools...
+cd ~/SPYBOMB || git clone https://github.com/figuripv6o/SPYBOMB.git && cd SPYBOMB
+
+# Create the new_merge_notes.md with your BUZZO plan
+cat > new_merge_notes.md <<EOF
+# SPYBOMB x BUZZO Merge Plan
+
+**Merge Targets:**
+- BUZZO Master Device List
+- BLE Radar Profile Table
+- Fiesta Logs & Device Events
+- Bluetooth Spoof Trigger Scripts
+- All synced files: PASSWORDS.txt, location.csv, devices.csv, etc.
+
+**Action Items:**
+- Pull all updated device logs and sync tables into SPYBOMB repo
+- Create /scripts/ and /data/ folders for organizing tools and device info
+- Enable daily commit + push system via Termux
+- Link SPYBOMB BLE triggers with BUZZO reactive buzzstorm logic
+
+**Next Push Includes:**
+- buzzstorm_trigger.py
+- bluetooth_spoof_trigger.py
+- definitions.json
+- BUZIT_Device_Inventory.csv
+- Profile_Detect_Table_Sample.csv
+- Combined_UUID_List.csv
+- Voice drop samples (compressed)
+- LilBuzz_Cam_WiFi_Config/
+
+**Commit Message:**
+> "BUZZO x SPYBOMB merge: synced BLE tools, spoof triggers, and buzzstorm configs"
+EOF
+
+# Commit and push to GitHub
+git add new_merge_notes.md
+git commit -m "BUZZO x SPYBOMB merge: synced BLE tools, spoof triggers, and buzzstorm configs"
+git push origin main
